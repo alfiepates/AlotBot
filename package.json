@@ -1,0 +1,19 @@
+{
+  "name": "alotBot",
+  "version": "0.2.0",
+  "description": "An IRC bot that corrects people that say \"alot\" or similar misspellings",
+  "main": "alotBot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://test.git/git.git"
+  },
+  "author": "SN4T14",
+  "license": "WTFPL",
+  "dependencies": {
+    "irc": "^0.3.10",
+    "js-yaml": "^3.2.7"
+  }
+}
