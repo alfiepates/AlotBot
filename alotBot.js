@@ -45,6 +45,12 @@ client.addListener('message', function (from, to, message) {
 			client.say(to, "Fucker");
 		} else if (message.toLowerCase().match(/.*\balotbot,.*starting point\b.*/gi)) {
 			client.say(to, "Here you go: http://pcpartpicker.com/p/hnbrf7");
+		} else if (message.toLowerCase().match(/.*\balotbot,.*datahoarder wiki\b.*/gi)) {
+			client.say(to, "Here you go: http://reddit.com/r/datahoarder/wiki");
+		} else if (message.toLowerCase().match(/.*\balotbot,.*zfs on linux\b.*/gi)) {
+			client.say(to, "Here you go: http://sn4t14.com/zol/");
+		} else if (message.toLowerCase().match(/.*\balotbot,.*zol\b.*/gi)) {
+			client.say(to, "Here you go: http://sn4t14.com/zol/");
 		}
 	} else {
 		// Private message to bot
