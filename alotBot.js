@@ -5,6 +5,7 @@
 var irc = require('irc');
 var yaml = require('js-yaml');
 var fs = require('fs');
+var schedule = require('node-schedule');
 
 var config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
 
@@ -17,7 +18,7 @@ client.addListener('message', function (from, to, message) {
 
 	if (from === config.admin && message.indexOf(config.nickname) === 0) {
 		var channelIndex, channel;
-		// Private message from bot admin to bot
+		// Message from bot admin to bot
 		if (message.toLowerCase().indexOf("please join") > -1) {
 			channelIndex = message.toLowerCase().indexOf("please join") + 12;
 			channel = message.substring(channelIndex).split(" ")[0];
@@ -35,21 +36,21 @@ client.addListener('message', function (from, to, message) {
 
 	if (to !== config.nickname) {
 		// Message to channel
-		if (message.toLowerCase().match(/.*\balot\b.*/gi)) {
+		if (message.match(new RegExp(".*\\balot\\b.*", "gi"))) {
 			client.say(to, "Oi! " + from + '! "alot" is not a word! "a lot" is the correct term!');
-		} else if (message.toLowerCase().match(/.*\ballot\b.*/gi)) {
+		} else if (message.match(new RegExp(".*\\ballot\\b.*", "gi"))) {
 			client.say(to, "Oi! " + from + '! "allot" is not the word you\'re looking for! "a lot" is the correct term!');
-		} else if (message.toLowerCase().match(/.*\bxbmc\b.*/gi) && (!message.toLowerCase().match(/.*\bkodi\b.*/gi))) {
+		} else if (message.match(new RegExp(".*\\bxbmc\\b.*", "gi")) && (!message.match(new RegExp(".*\\bkodi\\b.*", "gi")))) {
 			client.say(to, "Oi! " + from + '! "XBMC" is the old name! It\'s now called "Kodi"!');
-		} else if (message.toLowerCase().match(/.*\bfuckers\b.*/gi) && (from === "GreenObsession" || from === "tar-xvf" || from === "RonGarland")) {
+		} else if (message.match(new RegExp(".*\\bfuckers\\b.*", "gi")) && (from === "GreenObsession" || from === "tar-xvf" || from === "RonGarland")) {
 			client.say(to, "Fucker");
-		} else if (message.toLowerCase().match(/.*\balotbot,.*starting point\b.*/gi)) {
+		} else if (message.match(new RegExp(".*\\b" + config.nickname + ",.*starting point\\b.*", "gi"))) {
 			client.say(to, "Here you go: http://pcpartpicker.com/p/hnbrf7");
-		} else if (message.toLowerCase().match(/.*\balotbot,.*datahoarder wiki\b.*/gi)) {
+		} else if (message.match(new RegExp(".*\\b" + config.nickname + ",.*datahoarder wiki\\b.*", "gi"))) {
 			client.say(to, "Here you go: http://reddit.com/r/datahoarder/wiki");
-		} else if (message.toLowerCase().match(/.*\balotbot,.*zfs on linux\b.*/gi)) {
+		} else if (message.match(new RegExp(".*\\b" + config.nickname + ",.*zfs on linux\\b.*", "gi"))) {
 			client.say(to, "Here you go: http://sn4t14.com/zol/");
-		} else if (message.toLowerCase().match(/.*\balotbot,.*zol\b.*/gi)) {
+		} else if (message.match(new RegExp(".*\\b" + config.nickname + ",.*zol\\b.*", "gi"))) {
 			client.say(to, "Here you go: http://sn4t14.com/zol/");
 		}
 	} else {
@@ -72,3 +73,11 @@ process.stdin.on('data', function (text) {
 		process.exit();
 	}
 });
+
+var dingDongNotification = function() {
+	client.say("#DataHoarder", "The ding dong days are over!");
+};
+
+var dingDongDate = new Date(2016, 3, 8, 17, 0, 0);
+
+schedule.scheduleJob(dingDongDate, dingDongNotification);

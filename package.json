@@ -3,17 +3,23 @@
   "version": "0.2.0",
   "description": "An IRC bot that corrects people that say \"alot\" or similar misspellings",
   "main": "alotBot.js",
+  "dependencies": {
+    "irc": "~0.3.10",
+    "node-schedule": "~0.2.9",
+    "js-yaml": "~3.2.7"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://test.git/git.git"
+    "url": "git://github.com/SN4T14/AlotBot.git"
   },
   "author": "SN4T14",
   "license": "WTFPL",
-  "dependencies": {
-    "irc": "^0.3.10",
-    "js-yaml": "^3.2.7"
-  }
+  "bugs": {
+    "url": "https://github.com/SN4T14/AlotBot/issues"
+  },
+  "homepage": "https://github.com/SN4T14/AlotBot"
 }
