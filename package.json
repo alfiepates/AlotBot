@@ -1,25 +1,25 @@
 {
-  "name": "alotBot",
-  "version": "0.2.0",
-  "description": "An IRC bot that corrects people that say \"alot\" or similar misspellings",
-  "main": "alotBot.js",
-  "dependencies": {
-    "irc": "~0.3.10",
-    "node-schedule": "~0.2.9",
-    "js-yaml": "~3.2.7"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/SN4T14/AlotBot.git"
-  },
-  "author": "SN4T14",
-  "license": "WTFPL",
-  "bugs": {
-    "url": "https://github.com/SN4T14/AlotBot/issues"
-  },
-  "homepage": "https://github.com/SN4T14/AlotBot"
+	"name": "alotBot",
+	"version": "0.3.0",
+	"description": "A modular IRC bot that corrects people that say \"alot\" or similar misspellings, and does some other stuff",
+	"main": "alotBot.js",
+	"dependencies": {
+		"irc": "~0.3.10",
+		"node-schedule": "~0.2.9",
+		"js-yaml": "~3.2.7"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/SN4T14/AlotBot.git"
+	},
+	"author": "SN4T14",
+	"license": "WTFPL",
+	"bugs": {
+		"url": "https://github.com/SN4T14/AlotBot/issues"
+	},
+	"homepage": "https://github.com/SN4T14/AlotBot"
 }
