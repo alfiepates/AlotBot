@@ -2,7 +2,7 @@
 // License: CC0 1.0
 // manpage.js
 // manpage grabbification plugin for SN4T14's AlotBot
-// note: because i'm really fucking lazy, this plugin can only fetch manpges for section one. apologies if you wanted the manpage for xjack(6)
+// note: because i'm really fucking lazy, this plugin can only fetch manpages for section one. apologies if you wanted the manpage for xjack(6)
 
 
 'use strict';
