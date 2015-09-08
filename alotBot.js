@@ -34,7 +34,7 @@ client.addListener('message', function (from, to, message) {
 
 	var loadRegexResult = new RegExp(".*\\b" + config.nickname + ".*please (re)?load ([^ ]+).*", "gi").exec(message);
 
-	if (loadRegexResult !== null && from === config.admin && message.indexOf(config.nickname) === 0) {
+	if (loadRegexResult !== null && from === config.admin) {
 		loadPlugin(loadRegexResult[2]);
 	} else {
 		for (var plugin in plugins) {
