@@ -9,7 +9,7 @@
 module.exports = function (client, from, to, message, config) {
 	var manRegexResult = new RegExp(".*\\b" + config.nickname + ".*please fetch the manpage for ([^ ]+).*", "gi").exec(message);
 	if (manRegexResult !== null) {
-		client.say(to, "Here's the manpage for " + manRegexResult[2] + ": http://linux.die.net/man/1/" + manRegexResult[2]);
+		client.say(to, "Here's the manpage for " + manRegexResult[1] + ": http://linux.die.net/man/1/" + manRegexResult[1]);
 	}
 };
 
