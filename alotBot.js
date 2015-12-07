@@ -25,7 +25,7 @@ var loadPlugin = function (filename) {
 	try {
 		plugins[filename] = require("./plugins/" + filename);
 	} catch (e) {
-		client.say('Something broke while loading the "' + filename + '" plugin: ' + e.toString());
+		console.log('Something broke while loading the "' + filename + '" plugin: ' + e.toString());
 	}
 };
 
