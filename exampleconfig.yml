@@ -1,0 +1,5 @@
+nickname: AlotBot
+server: irc.freenode.net
+admin: SN4T14
+channels:
+    - "#AlotBot"

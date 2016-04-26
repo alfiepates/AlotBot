@@ -1,6 +1,5 @@
-nickname: AlotBot
+nickname: AlotTest
 server: irc.freenode.net
-admin: SN4T14
+admin: alfie
 channels:
-    - "#AlotBot"
     - "#DataHoarder"
