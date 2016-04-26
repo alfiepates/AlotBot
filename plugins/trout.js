@@ -6,7 +6,7 @@
 
 'use strict';
 module.exports = function (client, from, to, message, config) {
-	var troutRegexResult = new RegExp(".*\\b" + config.nickname + ".*, slap ([^ ]+).*", "gi").exec(message);
+	var troutRegexResult = new RegExp(".*\\b" + config.nickname + ".*slap ([^ ]+).*", "gi").exec(message);
 	if (troutRegexResult !== null) {
 		client.action(to, "slaps " + troutRegexResult[1] + " with a trout.");
 		else {
